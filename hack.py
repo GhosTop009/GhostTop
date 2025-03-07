@@ -7,7 +7,11 @@ import keyboard
 
 mc = Minecraft.create()
 def F():
-    time.sleep(3)
+    time.sleep(10)
+def T():
+    time.sleep(1)
+def P():
+    time.sleep(20)
 #Список читов:
 keyM = 'M'#Уничтожение чанков
 keyN = 'N'#Положить сервер
@@ -59,7 +63,12 @@ while True:
         mc.setBlocks(position.x+10,position.y+10,position.z+10, 0)
         F()
 
-        #Телепорт
-        if keyboard.is_pressed(keyR):
-            mc.player.setTilePos(position.x + 1, position.y, position.z)
-
+    #Телепорт
+    if keyboard.is_pressed(keyR):
+        mc.player.setTilePos(position.x + 30, position.y, position.z)
+        P()
+        
+    #ТНТ, стрелы и тд
+    if keyboard.is_pressed(keyG):
+        mc.spawnEntity(position.x+3, position.y+3, position.z, 26)
+        mc.spawnEntity(position.x, position.y+6, position.z, 10)
